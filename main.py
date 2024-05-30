@@ -35,12 +35,16 @@ while True:
         functions.plotting_objects(functions.scaling_object(functions.triangle, c), f"Triangle scaled by {c}.")
     elif choice == '4':  # Objects with reflection applied:
         axis = input("Enter the axis you want to reflect by(x or y): ")
+        while axis not in ['x','y']:
+            axis = input("Oops! Invalid input. You must choose x or y: ")
         functions.plotting_objects(functions.reflecting_object(functions.batman, axis),
                                    f"Batman reflected by {axis}.")
         functions.plotting_objects(functions.reflecting_object(functions.triangle, axis),
                                    f"Triangle reflected by {axis}.")
     elif choice == '5':  # Objects with shearing applied:
         axis = input("Enter the axis you want to shear(x or y): ")
+        while axis not in ['x','y']:
+            axis = input("Oops! Invalid input. You must choose x or y: ")
         angle = int(input("Enter the angle you want to shear with(in degrees): "))
         functions.plotting_objects(functions.shearing_axis(functions.batman, axis, angle),
                                    f"Batman sheared by {axis} with angle of {angle} degrees.")

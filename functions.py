@@ -28,8 +28,6 @@ def reflecting_object(object, axis):
         reflection_matrix = np.array([[1, 0], [0, -1]])
     elif axis == 'y':
         reflection_matrix = np.array([[-1, 0], [0, 1]])
-    else:
-        print("Oops! Wrong input. You must choose 'x' or 'y'.")
     reflected_object = np.dot(object, reflection_matrix)
     return reflected_object
 
@@ -39,7 +37,7 @@ def shearing_axis(object, axis, angle):
     if axis == "x":
         shearing_matrix = np.array([[1, 0], [np.tan(radians_angle), 1]])
         shearing_object = np.dot(object, shearing_matrix)
-    if axis == "y":
+    elif axis == "y":
         shearing_matrix = np.array([[1, np.tan(radians_angle)], [0, 1]])
         shearing_object = np.dot(object, shearing_matrix)
     return shearing_object
